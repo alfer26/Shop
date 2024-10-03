@@ -1,0 +1,26 @@
+@import "reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux&display=swap');
+
+html {
+      font-family: "Afacad Flux", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-size: 23px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+header::after, header::before {
+    content: '';
+}
+header > div {
+    display: flex;
+    font-size: 95px;
+    align-items: center;
+}
+header > div > h1 {
+    transform: translateY(-2px);
+    font-weight: 800;
+}
