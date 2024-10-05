@@ -5,6 +5,9 @@ const API_URL = 'https://fakestoreapi.com'
 
 const imagesPlace = document.querySelector('article');
 
+const searchButton = document.querySelector('button#search');
+const searchLine = document.querySelector('input#searchLine');
+
 async function getProducts() {
     try {
         const response = await fetch(`${API_URL}/products`)
@@ -25,6 +28,10 @@ function setImages(products) {
         return innerHTML;
     }, '')
     imagesPlace.innerHTML = innerHTML;
+}
+
+searchButton.onclick = () => {
+    searchLine.focus();
 }
 
 getProducts();

@@ -1,26 +1,207 @@
 @import "reset.css";
-@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Afacad+Flux&display=swap");
 
 html {
-      font-family: "Afacad Flux", sans-serif;
-      font-optical-sizing: auto;
-      font-weight: 400;
-      font-size: 23px;
+    font-family: "Afacad Flux", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 23px;
+    cursor: default;
 }
 
 header {
     display: flex;
     justify-content: space-between;
+    margin: 10px 8vw 0 8vw;
 }
-header::after, header::before {
-    content: '';
-}
-header > div {
+header > div,
+header > nav {
     display: flex;
-    font-size: 95px;
+    flex-direction: row;
     align-items: center;
 }
-header > div > h1 {
+header > div.title {
+    transform: translateY(-10px);
+}
+header > div.title > h1 {
     transform: translateY(-2px);
+    font-size: 95px;
     font-weight: 800;
+}
+header > nav {
+    gap: 1.5vw;
+}
+header > nav > button {
+    height: fit-content;
+    position: relative;
+}
+header > nav > button::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 3px;
+    left: 0;
+    background-color: #333333;
+    transform: scaleX(0);
+    transition: 0.3s ease;
+}
+header > nav > button:hover::before,
+header > nav > button:focus-visible::before,
+header > nav > button:active::before,
+header > div:last-of-type > button#login:active::before {
+    transform: scaleX(1);
+}
+header > div:last-of-type {
+    justify-content: space-between;
+    gap: 1.5vw;
+}
+header > div:last-of-type > button:not(#search) {
+    position: relative;
+}
+header > div:last-of-type > button {
+    height: 35px;
+}
+header > div:last-of-type > button > svg,
+header > nav > button,
+header > div:last-of-type > button#login {
+    transition: 0.1s ease-out;
+}
+header > div:last-of-type > button:active > svg,
+header > nav > button:active,
+header > div:last-of-type > button#login:active {
+    transform: scale(1.1);
+    filter: drop-shadow( 0 0 3px rgba(0, 0, 0, 0.5));
+    transition: 0.1s ease-out;
+}
+header > div:last-of-type > button#login:active {
+    transform: scale(1.05);
+}
+header > div:last-of-type > button#search > svg {
+    position: relative;
+    z-index: 1;
+}
+header > div:last-of-type > input {
+    position: absolute;
+    border: 2px solid black;
+    border-radius: 50px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    background-color: rgb(255, 255, 255);
+    height: 40px;
+    padding-left: 10px;
+    font-size: 24px;
+    clip-path: inset(0 0 0 100%);
+    left: calc(288px + 8vw);
+    right: calc(58px + 18.2vw);
+    transition: 0.2s ease-out;
+}
+header > div:last-of-type > button#search:hover + input,
+header > div:last-of-type > input:hover,
+header > div:last-of-type > button#search:focus-visible + input,
+header > div:last-of-type > input:focus-visible {
+    clip-path: inset(0 0 0 0);
+    transition: 0.3s ease-out;
+}
+header > div:last-of-type > button#favorite > svg > path#hover {
+    transition: 0.2s ease-out;
+}
+header > div:last-of-type > button#favorite:hover > svg > path#hover,
+header > div:last-of-type > button#favorite:active > svg > path#hover,
+header > div:last-of-type > button#favorite:focus-visible > svg > path#hover {
+    fill: #FF2929;
+    transition: 0.5s ease-out;
+}
+header > div:last-of-type > button#cart > div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0;
+}
+header > div:last-of-type > button#cart > div > svg {
+    position: absolute;
+    left: 3px;
+    top: 5px;
+    opacity: 0;
+    transform: scale(0.8) translateY(-4px);
+    z-index: -1;
+    transition:
+    0.2s linear,
+    opacity 0.1s linear;
+}
+header > div:last-of-type > button#cart:hover > div > svg,
+header > div:last-of-type > button#cart:focus-visible > div > svg,
+header > div:last-of-type > button#cart:active > div > svg {
+    transform: scale(1);
+    opacity: 1;
+    transition:
+    transform 1s linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%),
+    opacity 0.1s ease-in 0.1s;
+}
+header > div:last-of-type > button#cart:hover > div > svg#shirt,
+header > div:last-of-type > button#cart:focus-visible > div > svg#shirt {
+    transform: translateY(-18px);
+}
+header > div:last-of-type > button#cart:active > div > svg#shirt {
+    transform: translateY(-18px) scale(1.1);
+    transition: 0.1s ease-out;
+}
+header > div:last-of-type > button#cart:hover > div > svg#wallet,
+header > div:last-of-type > button#cart:focus-visible > div > svg#wallet {
+    transform: translate(-6px, -27px);
+}
+header > div:last-of-type > button#cart:active > div > svg#wallet {
+    transform: translate(-6px, -27px) scale(1.1);
+    transition: 0.1s ease-out;
+}
+header > div:last-of-type > button#cart:hover > div > svg#jewel,
+header > div:last-of-type > button#cart:focus-visible > div > svg#jewel {
+    transform: translate(13px, -12px);
+}
+header > div:last-of-type > button#cart:active > div > svg#jewel {
+    transform: translate(13px, -12px) scale(1.1);
+    transition: 0.1s ease-out;
+}
+header > div:last-of-type > button#login {
+    position: relative;
+    color: white;
+    text-shadow: 0px 0px 0px black;
+    width: 5.7vw;
+    height: 50px;
+    border-radius: 10px;
+    background-color: black;
+}
+header > div:last-of-type > button#login::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 52px;
+    height: 2px;
+    bottom: 13px;
+    left: calc(50% - 25.5px);
+    background-color: #dbdbdb;
+    transform: scaleX(0);
+    transition: 0.3s ease;
+}
+header > div:last-of-type > button#login:hover::before,
+header > div:last-of-type > button#login:focus-visible::before {
+    transform: scaleX(1);
+}
+@media(max-width: 1536px) {
+    header > div:last-of-type > button#login {
+        width: 80px;
+    }
+    header > div:last-of-type > input {
+        right: calc(138px + 12.5vw);
+    }
+}
+@media(max-width: 1280px) {
+    header {
+        margin: 10px 5vw 0 5vw;
+    }
+    header > div:last-of-type > input {
+        right: calc(138px + 9.5vw);
+        left: calc(268px + 5vw);
+    }
 }
