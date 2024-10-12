@@ -17,7 +17,7 @@
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                 >
-                    <rect width="6134" height="4690" rx="447" fill="white" />
+                    <rect width="6134" height="4690" rx="447" />
                     <path
                         d="M617 2382.46C617 1563.73 1302.84 912.023 2120.5 953.777L3804.24 1039.76C4542.08 1077.44 5121 1686.67 5121 2425.48V2425.48C5121 3191.78 4499.78 3813 3733.48 3813H2047.54C1257.48 3813 617 3172.52 617 2382.46V2382.46Z"
                         fill="#FF0000"
@@ -73,7 +73,7 @@
                 <button id="contactUs">Contact Us</button>
             </nav>
             <div>
-                <button id="search">
+                <button id="search" aria-label="Search">
                     <svg
                         width="35"
                         viewBox="0 0 100 100"
@@ -99,7 +99,7 @@
                     </svg>
                 </button>
                 <input type="text" name="search" id="searchLine" />
-                <button id="favorite">
+                <button id="favorite" aria-label="Favorite">
                     <svg
                         width="35"
                         viewBox="0 0 100 100"
@@ -125,7 +125,7 @@
                         />
                     </svg>
                 </button>
-                <button id="cart">
+                <button id="cart" aria-label="Cart">
                     <svg
                         width="35"
                         viewBox="0 0 100 100"
@@ -337,13 +337,42 @@
                 <div class="title">
                     <h2>Shop by Categories</h2>
                     <div>
-                        <button id="toLeft"></button>
-                        <button id="toRight"></button>
+                        <button id="toLeft">
+                            <svg
+                                width="18"
+                                height="14"
+                                viewBox="0 0 22 16"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M21 9C21.5523 9 22 8.55228 22 8C22 7.44772 21.5523 7 21 7L21 9ZM0.292893 7.29289C-0.0976313 7.68342 -0.0976314 8.31658 0.292893 8.7071L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34314C8.46159 1.95262 8.46159 1.31946 8.07107 0.928931C7.68054 0.538407 7.04738 0.538407 6.65685 0.928931L0.292893 7.29289ZM21 7L1 7L1 9L21 9L21 7Z"
+                                    fill="black"
+                                />
+                            </svg>
+                        </button>
+                        <button id="toRight">
+                            <svg
+                                width="18"
+                                height="14"
+                                viewBox="0 0 22 16"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9L1 7ZM21.7071 8.70711C22.0976 8.31658 22.0976 7.68342 21.7071 7.29289L15.3431 0.928932C14.9526 0.538408 14.3195 0.538408 13.9289 0.928932C13.5384 1.31946 13.5384 1.95262 13.9289 2.34315L19.5858 8L13.9289 13.6569C13.5384 14.0474 13.5384 14.6805 13.9289 15.0711C14.3195 15.4616 14.9526 15.4616 15.3431 15.0711L21.7071 8.70711ZM1 9L21 9V7L1 7L1 9Z"
+                                    fill="black"
+                                />
+                            </svg>
+                        </button>
                     </div>
                 </div>
-                <div class="content"></div>
+                <div class="contentCategories"></div>
             </section>
-            <section id="bestseller"></section>
+            <section class="bestsellers">
+                <h2>Our Bestsellers</h2>
+                <div class="contentBestsellers"></div>
+            </section>
         </main>
     </body>
 </html>

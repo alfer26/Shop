@@ -7,12 +7,21 @@ html {
     font-weight: 400;
     font-size: 23px;
     cursor: default;
+    overflow-y: scroll; 
+}
+h2 {
+    font-size: 40px;
 }
 
 header {
+    position: sticky;
+    top: 0px;
     display: flex;
     justify-content: space-between;
-    margin: 10px 8vw 0 8vw;
+    padding: 10px 8vw 5px 8vw;
+    border-radius: 0 0 12px 12px ;
+    background-color: rgba(255, 255, 255);
+    z-index: 5;
 }
 header > div,
 header > nav {
@@ -168,7 +177,7 @@ header > div:last-of-type > button#login {
     color: white;
     text-shadow: 0px 0px 0px black;
     width: 5.7vw;
-    height: 50px;
+    height: 60px;
     border-radius: 10px;
     background-color: black;
 }
@@ -188,6 +197,219 @@ header > div:last-of-type > button#login:hover::before,
 header > div:last-of-type > button#login:focus-visible::before {
     transform: scaleX(1);
 }
+
+main > section.categories,
+main > section.bestseller {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin: auto;
+}
+main > section.categories > div.title {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0 50px 0;
+}
+main > section.categories > div.title > h2 {
+    font-size: 40px;
+    transform: translateY(17px);
+    margin: auto;
+}
+main > section.categories > div.title > div {
+    display: flex;
+    gap: 10px;
+}
+main > section.categories > div.title > div > button {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: rgb(245, 245, 245);
+    display: none;
+    transition: 0.2s ease-in-out;
+}
+main > section.categories > div.title > div > button.invert {
+    filter: invert(1);
+}
+main > section.categories > div.title > div > button:hover,
+main > section.categories > div.title > div > button:focus-visible {
+    transform: scale(105%);
+    transition: 0.2s ease-in-out;
+}
+main > section.categories > div.title > div > button:active {
+    transform: scale(95%);
+}
+main > section.categories > div.contentCategories {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+main > section.categories > div.contentCategories > button {
+    border-radius: 20px;
+}
+main > section.categories > div.contentCategories > button > figure {
+    position: relative;
+    width: 18vw;
+    height: 25vw;
+    border-radius: 20px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    transition: 0.2s ease-in-out;
+}
+main > section.categories > div.contentCategories > button > figure > * {
+    transition: 0.1s;
+}
+main > section.categories > div.contentCategories > button:hover > figure,
+main > section.categories > div.contentCategories > button:focus-visible > figure {
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.4);
+    transition: 0.2s ease-in-out;
+}
+main > section.categories > div.contentCategories > button:active > figure {
+    box-shadow: inset 0 0 30px 10px rgba(0, 0, 0, 0.4);
+    transition: 0.1s;
+}
+main > section.categories > div.contentCategories > button:active > figure > * {
+    transform: scale(97%);
+    transition: 0.1s;
+}
+main > section.categories > div.contentCategories > button > figure > img {
+    position: absolute;
+    object-fit: contain;
+    inset: 5%;
+    width: 90%;
+    height: 90%;
+    z-index: -1;
+}
+main > section.categories > div.contentCategories > button > figure > figcaption {
+    position: absolute;
+    display: flex;
+    left: 30px;
+    right: 30px;
+    bottom: 50px;
+    height: 60px;
+    border-radius: 15px;
+    background-color: rgba(22, 22, 22, 0.7);
+    color: white;
+    text-shadow: 0 0 3px black;
+    backdrop-filter: blur(2px);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+main > section.bestseller {
+    margin-top: 150px;
+}
+main > section.bestseller > h2 {
+    margin: auto;
+    margin-bottom: 33px;
+}
+main > section.bestseller > div.contentBestseller {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+main > section.bestseller > div.contentBestseller > div.product {
+    position: relative;
+    width: 18vw;
+    border-radius: 20px;
+    transition: 0.2s ease-in-out;
+    border: none;
+}
+main > section.bestseller > div.contentBestseller > div.product > figure {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    transition: 0.2s ease-in-out;
+}
+main > section.bestseller > div.contentBestseller > div.product > figure::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 20vw;
+    border-radius: 20px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: 0.1s ease-out;
+}
+main > section.bestseller > div.contentBestseller > div.product > figure > img {
+    pointer-events: none;
+    position: relative;
+    object-fit: contain;
+    width: 100%;
+    height: 20vw;
+    z-index: -1;
+    transform: scale(90%);
+}
+main > section.bestseller > div.contentBestseller > div.product > figure > figcaption {
+    width: 100%;
+}
+main > section.bestseller > div.contentBestseller > div.product > figure > figcaption > p {
+    margin: 13px;
+    line-height: 27px;
+}
+main > section.bestseller > div.contentBestseller > div.product > button.addToCart {
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    top: 15vw;
+    height: 3.125vw;
+    border-radius: 15px;
+    background-color: rgba(22, 22, 22, 0.7);
+    color: white;
+    text-shadow: 0 0 3px black;
+    backdrop-filter: blur(2px);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: 0.1s ease-out;
+}
+main > section.bestseller > div.contentBestseller > div.product > button.addToFavorite {
+    position: absolute;
+    display: flex;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.1s ease-out;
+}
+main > section.bestseller > div.contentBestseller > div.product > button.addToFavorite > svg > path#hover {
+    transition: 0.3s ease-out;
+}
+main > section.bestseller > div.contentBestseller > div.product > button.addToFavorite:hover > svg > path#hover,
+main > section.bestseller > div.contentBestseller > div.product > button.addToFavorite:focus-visible > svg > path#hover {
+    fill: #FF2929;
+    transition: 0.5s ease-out;
+}
+main > section.bestseller > div.contentBestseller > div.product:hover > figure::before,
+main > section.bestseller > div.contentBestseller > div.product:focus-visible > figure::before{
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+    transition: 0.1s ease-out;
+}
+main > section.bestseller > div.contentBestseller > div.product:hover > button,
+main > section.bestseller > div.contentBestseller > div.product:focus-visible > button,
+main > section.bestseller > div.contentBestseller > div.product > button:focus-visible,
+main > section.bestseller > div.contentBestseller > div.product > button:has(+ button:focus-visible),
+main > section.bestseller > div.contentBestseller > div.product > button:focus-visible + button {
+    opacity: 1;
+    transition: opacity 0.3s ease-out, transform 0.1s ease-out;
+}
+main > section.bestseller > div.contentBestseller > div.product > button:hover,
+main > section.bestseller > div.contentBestseller > div.product > button:focus-visible {
+    transform: scale(104%);
+    transition: 0.1s;
+}
+main > section.bestseller > div.contentBestseller > div.product > button:active {
+    transform: scale(97%);
+    transition: 0.05s;
+}
+
+
 @media(max-width: 1536px) {
     header > div:last-of-type > button#login {
         width: 80px;
@@ -198,10 +420,23 @@ header > div:last-of-type > button#login:focus-visible::before {
 }
 @media(max-width: 1280px) {
     header {
-        margin: 10px 5vw 0 5vw;
+        padding: 10px 5vw 5px 5vw;
     }
     header > div:last-of-type > input {
         right: calc(138px + 9.5vw);
         left: calc(268px + 5vw);
+    }
+}
+@media(max-width: 1024px) {
+    main > section.categories > div.contentCategories > button > figure {
+        width: 38vw;
+        height: 53vw;
+    }
+    main > section.bestseller > div.contentBestseller > div.product {
+        width: 38vw;
+    }
+    main > section.bestseller > div.contentBestseller > div.product > figure > img,
+    main > section.bestseller > div.contentBestseller > div.product > figure::before {
+        height: 42vw;
     }
 }

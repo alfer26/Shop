@@ -13,11 +13,11 @@
 
 /* Links */
 
-a, a:link, a:visited  {
+a, :link, :visited  {
     text-decoration: none;
 }
 
-a:hover  {
+:hover  {
     text-decoration: none;
 }
 
@@ -58,7 +58,7 @@ input, textarea, button, select {
     background-color: transparent;
 }
 
-input::-ms-clear {
+::-ms-clear {
 	display: none;
 }
 
@@ -70,12 +70,12 @@ button, input[type="submit"] {
     cursor: pointer;
 }
 
-input:focus, input:active,
-button:focus, button:active {
+:focus, :active,
+:focus, :active {
     outline: none;
 }
 
-button::-moz-focus-inner {
+::-moz-focus-inner {
 	padding: 0;
 	border: 0;
 }
